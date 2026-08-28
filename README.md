@@ -1,0 +1,1 @@
+This is a repository with a simple implementation of a full stack app with a containerized envrionment for both development and production for the purpose of the Full Stack Open course containers section
