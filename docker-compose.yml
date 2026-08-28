@@ -1,0 +1,22 @@
+services:
+  app:
+    image: patientor-front
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+
+  server:
+    image: patientior-backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+
+  nginx:
+    image: nginx:1.29
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 8080:80
+    depends_on:
+      - server
+      - app
